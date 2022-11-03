@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <title>comunication</title>
+</head>
+
+<body>
+  <h1>test</h1>
+
+
+</body>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+<!-- <script src="https://botrazbor.ru/telegram/api_get_filters/"></script> -->
+
+<script>
+  // window.onload = async () => {
+    
+    
+    
+    const getDataFilter = async () => {
+      try {
+
+        const url = 'https://91.218.229.240:3333/get-data-razborka';
+        const res = await fetch(url, {
+          mode: 'no-cors',
+          headers: {
+            'Content-type': 'text/javascript',
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json'
+          }
+        })
+
+        console.log({res: await res})
+        console.log({resOK: await res.ok})
+        console.log({resBODY: await res.json()})
+alert('this is work')
+      } catch (err) {
+        console.log('ERROR get data -', err);
+      }
+
+    }
+    getDataFilter()
+
+  // }
+</script>
+
+</html>
+
+-subj "/C=US/ST=Oregon/L=Portland/O=Company Name/OU=Org/CN=91.218.229.240:3333"
+openssl req -new -newkey rsa:2048 -nodes -keyout ./91.218.229.240.key -out ./91.218.229.240.csr
